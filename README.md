@@ -74,21 +74,6 @@ Output (CSV Format):
 
 
 
-
-
-
-
-Workflow Overview
- 
-
-#The MS connectivity score applies to the cases where more than two input coordinate files are specified (currently not supported in this package release).
-
-
-
-
-
-
-
 	(1)	Alber, F.; Dokudovskaya, S.; Veenhoff, L. M.; Zhang, W.; Kipper, J.; Devos, D.; Suprapto, A.; Karni-Schmidt, O.; Williams, R.; Chait, B. T.; Rout, M. P.; Sali, A. Nature 2007, 450, 683-94.
 	(2)	Mesleh, M. F.; Hunter, J. M.; Shvartsburg, A. A.; Schatz, G. C.; Jarrold, M. F. J. Phys. Chem 1996, 100, 16082-16086.
 	(3)	Shvartsburg, A. A.; Jarrold, M. F. Chem. Phys. Lett. 1996, 261, 86-91.
