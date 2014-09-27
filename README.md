@@ -35,17 +35,31 @@ Arg1: Second Coordinate File (coordinateFileB)
 Arg3: number of models to generate (NumberModels)
 
 usage: python sampling.py  CoordinateFileA  CoordinateFileB  NumberModels
+
 Description of optimization process
-We use a randomize sampler to generate the docked model structures as implemented in integrative modelling platform (IMP; http://www.integrativemodeling.org). This sampler (IMP::core::MCCGSampler) finds random conformations and then uses a conjugates gradient optimization step to search for “good” model structures. Each Monte Carlo step is followed by an optimization step that decides to accept or reject the conformation. The sampling process involves three nested loops: i) number of attempts to find acceptable conformations, ii) number of Monte Carlo steps, iii) number of conjugated gradient steps. For acceleration of the model generation process, the input structures are coarse-grained down to residue level, where each sphere represents a residue. Scaling of the sphere is obtained through the corresponding residue mass.
+We use a randomize sampler to generate the docked model structures as implemented in integrative modelling platform (IMP; http://www.integrativemodeling.org). This sampler (IMP::core::MCCGSampler) finds random conformations and then uses a conjugates gradient optimization step to search for “good” model structures. Each Monte Carlo step is followed by an optimization step that decides to accept or reject the conformation. 
+The sampling process involves three nested loops:
+i) number of attempts to find acceptable conformations, 
+ii) number of Monte Carlo steps, 
+iii) number of conjugated gradient steps. For acceleration of the model generation process, the input structures are coarse-grained down to residue level, where each sphere represents a residue. Scaling of the sphere is obtained through the corresponding residue mass.
 
 Visualization of generated structures
+
 The produced structures are generated as *.pym type of file to be displayed in Pymol. The used writer supports points and spheres.
+
 *Running the sampling.py requires installation of IMP. Information on how to install IMP, can be found here:
+
 http://salilab.org/imp/nightly/doc/html/md__tmp_nightly-build-40773_imp-20130701_8develop_8498662f_doc_installation.html#installation
+
 B: Evaluation of candidate model Structures
 The output structures are subjects to evaluation by measuring their closeness-to-fit with the experimental data. The first step is to convert the *.pym type of files into *.mfj that can be read by Mobcal Code (Calculation of theoretical CCS). To do so, the pym2mfj.py script can be used. 
+
 usage: python pym2mfj.py InputFileName OutputFileName
-To evaluate the violation of cross-linking restraints, the scoringXlinks.py script is used. This script reads a *.txt file with the information about the location of cross-links identified by the experiments and after iteration over the candidate structures generated from the previous step, it calculates the overall violation of cross-link restraints for each structure. The cut-off of the physical distance between two cross-linked residues is set <30Å (25-30Å). This value is used as an upper bound threshold to judge whether or not a cross-link is violated. The proteins flexibility as well as the curvature of a non-euclidean distance is also taken into account. 
+
+To evaluate the violation of cross-linking restraints, the scoringXlinks.py script is used. This script reads a *.txt file with the information about the location of cross-links identified by the experiments and after iteration over the candidate structures generated from the previous step, it calculates the overall violation of cross-link restraints for each structure.
+
+The cut-off of the physical distance between two cross-linked residues is set <30Å (25-30Å). This value is used as an upper bound threshold to judge whether or not a cross-link is violated. The proteins flexibility as well as the curvature of a non-euclidean distance is also taken into account. 
+
 Usage: python scoringXlinks.py  XLinfo.txt CutoffDistance
 
 Input Fields:
@@ -99,40 +113,6 @@ Publications:
 
 •	Mesleh, M. F.; Hunter, J. M.; Shvartsburg, A. A.; Schatz, G. C.; Jarrold, M. F. J. Phys. Chem 1996, 100, 16082-16086.
 •	Shvartsburg, A. A.; Jarrold, M. F. Chem. Phys. Lett. 1996, 261, 86-91.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
