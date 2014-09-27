@@ -79,6 +79,7 @@ License: LGPL. This library is free software; you can redistribute it and/or mod
 Last known good IMP version: XXXX
 Testable: Yes.
 Parallelizeable: No
+
 Publications:
 •	Hall Z, Politis A, Robinson CV. [Structural modeling of heteromeric protein complexes from disassembly pathways and ion mobility-mass spectrometry] Structure 20, 1-14, 2012.
 •	Politis A, Park AY, Hall Z, Ruotolo BT, Robinson CV.[Integrative modelling coupled with ion mobility mass spectrometry reveals structural features of the clamp loader in complex with single-stranded DNA binding protein] Journal of Molecular Biology 425, 4790-4801, 2013. 
